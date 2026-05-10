@@ -28,7 +28,7 @@ export default function Header() {
     <header className="site-header">
       <nav className="nav-pill" aria-label="Primary">
         <a href="#" className="nav-logo" aria-label="Home">
-          <img src="/assets/logo.png" alt="H2S Logo" />
+          <img src="assets/logo.png" alt="H2S Logo" />
         </a>
         <ul className="nav-links">
           {links.map((l) => (

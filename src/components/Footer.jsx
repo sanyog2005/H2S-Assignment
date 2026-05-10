@@ -4,12 +4,12 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-bg">
-        <img src="/assets/artboard30.png" alt="" aria-hidden="true" />
+        <img src="assets/artboard30.png" alt="" aria-hidden="true" />
       </div>
 
       <div className="footer-inner">
         <div className="footer-brand">
-          <img src="/assets/logo.png" alt="H2S" className="footer-logo" />
+          <img src="assets/logo.png" alt="H2S" className="footer-logo" />
           <p>Where innovation becomes reality.</p>
         </div>
 

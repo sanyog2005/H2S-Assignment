@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="hero">
       <div className="hero-bg" aria-hidden="true">
-        <img src="/assets/artboard.png" alt="" />
+        <img src="assets/artboard.png" alt="" />
         <div className="hero-bg-fade" />
       </div>
 
@@ -19,7 +19,7 @@ export default function Hero() {
         <div className="hero-portrait" aria-hidden="true">
           <span className="portrait-panel" />
           <span className="portrait-frame">
-            <img src="/assets/rect4495.png" alt="" />
+            <img src="assets/rect4495.png" alt="" />
           </span>
         </div>
 

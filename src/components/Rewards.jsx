@@ -4,7 +4,7 @@ export default function Rewards() {
   return (
     <section id="rewards" className="rewards section">
       <div className="rewards-bg">
-        <img src="/assets/artboard29.png" alt="" aria-hidden="true" />
+        <img src="assets/artboard29.png" alt="" aria-hidden="true" />
         <div className="rewards-bg-fade" />
       </div>
 

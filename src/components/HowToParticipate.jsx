@@ -2,27 +2,27 @@ import './HowToParticipate.css';
 
 const steps = [
   {
-    icon: '/assets/edit-icon.svg',
+    icon: 'assets/edit-icon.svg',
     title: ['Register', 'for Hackathon'],
     body: ['Sign up now to participate', 'in the hackathon.']
   },
   {
-    icon: '/assets/group-icon.svg',
+    icon: 'assets/group-icon.svg',
     title: ['Form', 'your Teams'],
     body: ['Collaborate with', 'like-minded individuals', 'to form teams.']
   },
   {
-    icon: '/assets/mountain-icon.svg',
+    icon: 'assets/mountain-icon.svg',
     title: ['Choose', 'a Challenge'],
     body: ['Select from the list', 'of challenges provided.']
   },
   {
-    icon: '/assets/shuttle-icon.svg',
+    icon: 'assets/shuttle-icon.svg',
     title: ['Innovate', 'and Develop'],
     body: ['Work on your solutions,', 'supported by resources', 'and mentorship.']
   },
   {
-    icon: '/assets/idea-icon.svg',
+    icon: 'assets/idea-icon.svg',
     title: ['Submit', 'Your Solution'],
     body: ['Present your innovative', 'ideas for evaluation.']
   }

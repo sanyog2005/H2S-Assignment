@@ -36,7 +36,7 @@ export default function WhyParticipate() {
         </div>
 
         <div className="why-astronaut" aria-hidden="true">
-          <img src="/assets/layer2.png" alt="" />
+          <img src="assets/layer2.png" alt="" />
         </div>
 
         <aside className="why-panel why-panel-left">

@@ -38,27 +38,27 @@ export default function WhatIsHackathon() {
         <div className="whatis-collage" aria-hidden="true">
           {/* tile-A: orange typing — top-left narrow tall */}
           <div className="tile tile-a">
-            <img src="/assets/rect4493.png" alt="" />
+            <img src="assets/rect4493.png" alt="" />
           </div>
 
           {/* tile-B: crystal ball — top-right tall */}
           <div className="tile tile-b">
-            <img src="/assets/rect4489.png" alt="" />
+            <img src="assets/rect4489.png" alt="" />
           </div>
 
           {/* tile-C: VR woman — wide middle */}
           <div className="tile tile-c">
-            <img src="/assets/rect4492.png" alt="" />
+            <img src="assets/rect4492.png" alt="" />
           </div>
 
           {/* tile-D: people at desks — bottom-left square */}
           <div className="tile tile-d">
-            <img src="/assets/rect4491.png" alt="" />
+            <img src="assets/rect4491.png" alt="" />
           </div>
 
           {/* tile-E: dark workspace — bottom-right small */}
           <div className="tile tile-e">
-            <img src="/assets/rect4490.png" alt="" />
+            <img src="assets/rect4490.png" alt="" />
           </div>
 
           {/* big + icon overlay between top tiles */}
