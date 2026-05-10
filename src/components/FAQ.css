@@ -1,0 +1,135 @@
+:root {
+  --brand: #8b5cf6; 
+  --bg-dark: #09090b;
+}
+
+.faq {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  text-align: center;
+  background-color: var(--bg-dark);
+  font-family: 'Manrope', sans-serif;
+  color: #ffffff;
+}
+
+.faq-heading {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin: 0 0 60px;
+  text-transform: uppercase;
+}
+
+.faq-list {
+  list-style: none;
+  padding: 0 40px;
+  margin: 0 auto;
+  max-width: 1200px;
+  text-align: left;
+}
+
+/* =========================================
+   GRID LAYOUT
+   ========================================= */
+.faq-row {
+  display: grid;
+  /* Number Box | Question | Answer */
+  grid-template-columns: 50px 1fr 1.2fr;
+  gap: 40px;
+  align-items: flex-start;
+  padding: 32px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  transition: background-color 0.3s ease;
+}
+
+.faq-row:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* =========================================
+   ELEMENT STYLING
+   ========================================= */
+.faq-num {
+  font-size: 16px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 40px;
+  transition: all 0.3s ease;
+}
+
+.faq-q-text {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #ffffff;
+  padding-top: 6px; /* Aligns text visually with the number box */
+  transition: color 0.3s ease;
+}
+
+.faq-answer {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #a1a1aa; /* Dim grayish-white */
+  padding-top: 6px;
+}
+
+/* =========================================
+   HOVER EFFECTS (Purple Highlight)
+   ========================================= */
+.faq-row:hover .faq-num {
+  background: rgba(139, 92, 246, 0.2);
+  color: var(--brand);
+}
+
+.faq-row:hover .faq-q-text {
+  color: var(--brand);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 900px) {
+  .faq-row {
+    /* Stacks Question and Answer next to Number Box on tablets */
+    grid-template-columns: 50px 1fr;
+    gap: 20px;
+  }
+  
+  .faq-answer {
+    /* Forces the answer to wrap under the question */
+    grid-column: 2;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .faq-list {
+    padding: 0 20px;
+  }
+  
+  .faq-row {
+    grid-template-columns: 40px 1fr;
+    padding: 24px 0;
+  }
+  
+  .faq-num {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+  
+  .faq-q-text {
+    font-size: 16px;
+    padding-top: 4px;
+  }
+  
+  .faq-answer {
+    font-size: 14px;
+  }
+}

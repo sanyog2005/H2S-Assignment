@@ -1,0 +1,280 @@
+:root {
+  --brand: #8b5cf6; 
+  --bg-dark: #09090b;
+}
+
+.why {
+  position: relative;
+  padding: 100px 0 80px;
+  text-align: center;
+  overflow: hidden;
+  background-color: var(--bg-dark);
+  font-family: 'Manrope', sans-serif;
+}
+
+.why .eyebrow {
+  position: relative;
+  z-index: 5;
+  color: var(--brand);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+}
+
+.why-stage {
+  position: relative;
+  margin: 60px auto 0;
+  width: 100%;
+  max-width: 1600px; 
+  height: 600px; 
+}
+
+/* concentric rings centered on astronaut */
+/* =========================================
+   ANIMATIONS (Zero-G Float & Cosmic Pulse)
+   ========================================= */
+@keyframes float {
+  0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+  50%      { transform: translate(-50%, -50%) translateY(-20px); }
+}
+
+@keyframes pulseRing {
+  0%, 100% { 
+    transform: translate(-50%, -50%) scale(1); 
+    opacity: 1; 
+  }
+  50% { 
+    transform: translate(-50%, -50%) scale(1.05); 
+    opacity: 0.5; /* Dims slightly as it expands */
+  }
+}
+
+/* =========================================
+   UPDATED ELEMENTS
+   ========================================= */
+/* Concentric rings container */
+.why-rings {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 1100px;
+  height: 1100px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(139, 92, 246, 0.2); 
+  border-radius: 50%;
+  /* Apply the pulse animation to all rings */
+  animation: pulseRing 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Stagger the animation delays to create an outward ripple effect */
+.ring-1 { 
+  width: 380px; height: 380px; border-color: rgba(139, 92, 246, 0.4); 
+  animation-delay: 0s;
+}
+.ring-2 { 
+  width: 540px; height: 540px; border-color: rgba(139, 92, 246, 0.25); 
+  animation-delay: 0.8s;
+}
+.ring-3 { 
+  width: 720px; height: 720px; border-color: rgba(139, 92, 246, 0.15); 
+  animation-delay: 1.6s;
+}
+.ring-4 { 
+  width: 900px; height: 900px; border-color: rgba(139, 92, 246, 0.08); 
+  animation-delay: 2.4s;
+}
+
+/* Astronaut */
+.why-astronaut {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); 
+  width: 450px;
+  height: 550px;
+  z-index: 4; 
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.8));
+  /* Apply the slow, continuous float animation */
+  animation: float 7s ease-in-out infinite;
+}
+
+.why-astronaut img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+/* purple side panels */
+.why-panel {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 580px;
+  height: 340px; 
+  background: var(--brand);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.why-panel-left {
+  left: 0;
+  /* Removed padding that was pushing things too far left */
+}
+
+.why-panel-right {
+  right: 0;
+  /* Removed padding that was pushing things too far right */
+}
+
+.why-card {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  gap: 24px;
+  position: relative;
+}
+
+/* The divider line between the top and bottom cards */
+.why-card + .why-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 40px;
+  right: 40px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.why-card-left {
+  justify-content: flex-end;
+}
+
+.why-card-right {
+  justify-content: flex-start;
+}
+
+.why-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.why-card-left .why-text {
+  text-align: right;
+}
+
+.why-card-right .why-text {
+  text-align: left;
+}
+
+.why-card h3 {
+  margin: 0 0 6px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.why-card p {
+  margin: 0;
+  font-size: 15px;
+  color: #fff;
+  line-height: 1.4;
+  opacity: 0.9; 
+}
+
+/* Single White Accent Bar */
+.why-accent {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* We completely remove the "bar-purple" by hiding it 
+   and only style the "bar-white" */
+.bar-purple {
+  display: none; 
+}
+
+.bar-white {
+  display: block;
+  width: 18px; /* Width of the white rectangle */
+  height: 60px; /* Height of the white rectangle */
+  background: #ffffff;
+}
+
+
+/* ====== Responsive ====== */
+@media (max-width: 1400px) {
+  .why-stage { height: 500px; max-width: 1200px; }
+  .why-panel { width: 440px; height: 300px; padding: 0; }
+  .why-astronaut { width: 380px; height: 480px; }
+  .why-card { padding: 0 30px; gap: 16px; }
+  .why-card + .why-card::before { left: 30px; right: 30px; }
+}
+
+@media (max-width: 1100px) {
+  .why-stage {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 20px;
+  }
+  .why-rings,
+  .why-astronaut {
+    display: none;
+  }
+  .why-panel {
+    position: relative;
+    transform: none;
+    top: auto;
+    left: auto;
+    right: auto;
+    width: 100%;
+    height: auto;
+  }
+  .why-card {
+    padding: 30px 20px;
+  }
+  .why-card-left,
+  .why-card-right {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 600px) {
+  .why-card { gap: 16px; flex-direction: column; text-align: center !important;}
+  .why-card-left .why-text, .why-card-right .why-text { text-align: center; }
+  .why-accent { order: -1; } /* Move accent above text on mobile */
+  .why-card h3 { font-size: 18px; }
+  .why-card p { font-size: 14px; }
+  .bar-white { height: 8px; width: 48px; } /* Horizontal bar on mobile */
+}
+
+/* Pause heavy float / pulse animations when motion should be reduced.
+   Saves battery on mobile and respects accessibility preferences. */
+@media (prefers-reduced-motion: reduce) {
+  .why-astronaut,
+  .ring {
+    animation: none !important;
+  }
+  .why-astronaut {
+    transform: translate(-50%, -50%);
+  }
+  .ring {
+    transform: translate(-50%, -50%);
+  }
+}

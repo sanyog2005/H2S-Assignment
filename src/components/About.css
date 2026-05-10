@@ -1,0 +1,126 @@
+.about {
+  position: relative;
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  overflow: hidden;
+  background: #0e0e10; /* Ensures the dark background matches */
+}
+
+.about > .eyebrow,
+.about-title,
+.about-copy,
+.about-cta-wrap {
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  color: #7C3AED;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.about-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  color: #ffffff;
+}
+
+.about-copy {
+  max-width: 800px; /* Reduced from 1100px to match the tighter text wrapping in your target design */
+  margin: 0 auto 40px;
+  font-size: 16px; /* Reduced from 20px to match the target scale */
+  line-height: 1.6;
+  color: #d1d5db; /* Lighter grey for better contrast */
+}
+
+.about-cta-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.about-apply {
+  background: #7C3AED;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px 44px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.about-apply:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(124, 58, 237, 0.45);
+}
+
+/* ===== Decorative bars ===== */
+.bars {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 240px; /* Scaled precisely for the target proportions */
+  width: 192px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bars-left {
+  left: 0;
+}
+
+.bars-right {
+  right: 0;
+}
+
+.about-apply:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(124, 58, 237, 0.45);
+}
+
+.about-apply {
+  min-height: 44px;
+}
+
+/* ===== Responsive adjustments ===== */
+@media (max-width: 1100px) {
+  .bars {
+    width: 130px;
+    height: 162px;
+  }
+  .about { padding-top: 80px; padding-bottom: 80px; }
+  .about-copy { padding: 0 24px; }
+}
+
+@media (max-width: 900px) {
+  .bars { width: 90px; height: 120px; }
+  .about-title { font-size: 38px; }
+}
+
+@media (max-width: 700px) {
+  .bars {
+    display: none;
+  }
+  .about { padding-top: 56px; padding-bottom: 56px; }
+  .about-title { font-size: 32px; }
+  .about-copy { font-size: 14px; padding: 0 20px; }
+  .about-apply { padding: 12px 36px; font-size: 16px; }
+}
+
+@media (hover: none) {
+  .about-apply:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}

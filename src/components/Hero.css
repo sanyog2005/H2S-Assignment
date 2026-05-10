@@ -1,0 +1,341 @@
+:root {
+  --brand: #7c3aed; 
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #000000;
+  color-scheme: dark;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+}
+
+.hero-bg-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 70%, #000000 100%);
+  pointer-events: none;
+}
+
+.hero-stage {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  min-height: 1100px;
+}
+
+/* ======================
+   Title — CODE THE FUTURE
+   ====================== */
+.hero-title {
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  pointer-events: none;
+  z-index: 1; 
+}
+
+.hero-title .line {
+  position: absolute;
+  display: block;
+  font-size: 104px;
+  line-height: 0.92;
+  white-space: nowrap;
+}
+
+.line-1 {
+  left: 21%;
+  top: 18.5%;
+  color: #ffffff;
+}
+
+.line-2 {
+  left: 27.2%;
+  top: 28%;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--brand);
+  text-stroke: 2px var(--brand);
+}
+
+/* ===============
+   Model portrait 
+   =============== */
+.hero-portrait {
+  position: absolute;
+  left: 9.5%;
+  top: 20%; 
+  width: 21%;
+  max-width: 404px;
+  z-index: 2; 
+}
+
+.hero-portrait img {
+  position: relative; 
+  display: block;
+  width: 100%;
+  height: auto; 
+  z-index: 2; 
+}
+
+.portrait-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 15%;
+  background: var(--brand);
+  -webkit-clip-path: polygon(0 0, 68% 0, 100% 20%, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 68% 0, 100% 20%, 100% 100%, 0 100%);
+  z-index: 1;
+}
+
+/* ============
+   Tagline
+   ============ */
+.hero-tagline {
+  position: absolute;
+  left: 9.8%;
+  bottom: 19.5%;
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  color: rgba(217, 217, 217, 0.8);
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+/* ====================
+   Register Button
+   ==================== */
+.hero-register {
+  position: absolute;
+  right: 9.2%;
+  top: 56%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 240px;
+  height: 68px;
+  z-index: 10;
+  
+  /* Horizontal gradient from solid purple to slightly transparent white */
+  background: linear-gradient(90deg, rgba(109, 40, 217, 0.95) 0%, rgba(255, 255, 255, 0.3) 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  
+  font-family: 'Manrope', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Drawing the corner brackets using multiple background linear gradients */
+.hero-register::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    /* Top Left Corner (Horizontal, Vertical) */
+    linear-gradient(#fff, #fff), linear-gradient(#fff, #fff),
+    /* Top Right Corner (Horizontal, Vertical) */
+    linear-gradient(#fff, #fff), linear-gradient(#fff, #fff),
+    /* Bottom Left Corner (Horizontal, Vertical) */
+    linear-gradient(#fff, #fff), linear-gradient(#fff, #fff),
+    /* Bottom Right Corner (Horizontal, Vertical) */
+    linear-gradient(#fff, #fff), linear-gradient(#fff, #fff);
+  background-repeat: no-repeat;
+  /* Adjusting thickness (2px) and length (16px) of the corner arms */
+  background-size:
+    16px 2px, 2px 16px,
+    16px 2px, 2px 16px,
+    16px 2px, 2px 16px,
+    16px 2px, 2px 16px;
+  background-position:
+    top left, top left,
+    top right, top right,
+    bottom left, bottom left,
+    bottom right, bottom right;
+}
+
+.hero-register:hover,
+.hero-register:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(109, 40, 217, 0.2);
+  background: linear-gradient(90deg, rgba(124, 58, 237, 1) 0%, rgba(255, 255, 255, 0.4) 100%);
+}
+
+.hero-register:active {
+  transform: translateY(-1px);
+}
+
+/* ============
+   Responsive
+   ============ */
+@media (max-width: 1400px) {
+  .hero-title .line { font-size: 80px; }
+  .hero-portrait { width: 25%; }
+}
+
+@media (max-width: 1100px) {
+  .hero-stage { min-height: 820px; }
+  .hero-portrait {
+    left: 6%;
+    top: 25%;
+    width: 32%;
+  }
+  .line-1 { left: 38%; top: 20%; }
+  .line-2 { left: 42%; top: 32%; }
+  .hero-register {
+    right: 6%;
+    top: 55%;
+    width: 200px;
+    height: 56px;
+    font-size: 16px;
+  }
+}
+
+/* ============================================================
+   Mobile / small-tablet: switch from absolute positioning
+   to a flex column flow so nothing can overlap or clip.
+   ============================================================ */
+@media (max-width: 900px) {
+  .hero {
+    min-height: 0;
+  }
+
+  .hero-stage {
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 110px 20px 48px;
+    gap: 28px;
+  }
+
+  /* Title becomes a normal block, lines stack */
+  .hero-title {
+    position: static;
+    text-align: center;
+    width: 100%;
+  }
+  .hero-title .line {
+    position: static;
+    display: block;
+    white-space: normal;
+    font-size: 56px;
+    line-height: 1;
+  }
+  .line-1, .line-2 {
+    left: auto;
+    top: auto;
+  }
+  .line-2 {
+    margin-top: 4px;
+  }
+
+  /* Portrait sits centered in flow, panel scales to image */
+  .hero-portrait {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: 70%;
+    max-width: 320px;
+    margin: 8px auto 0;
+  }
+
+  .portrait-panel {
+    top: 12%;
+  }
+
+  /* Register button below portrait */
+  .hero-register {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: 220px;
+    height: 56px;
+    font-size: 16px;
+  }
+
+  /* Tagline at the very bottom of the stack, centered */
+  .hero-tagline {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    text-align: center;
+    width: 100%;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    padding: 0 8px;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-stage {
+    padding: 96px 16px 40px;
+    gap: 22px;
+  }
+  .hero-title .line { font-size: 44px; }
+  .hero-portrait { width: 78%; max-width: 300px; }
+  .hero-register {
+    width: 200px;
+    height: 52px;
+    font-size: 15px;
+  }
+  .hero-tagline { font-size: 12px; }
+}
+
+@media (max-width: 420px) {
+  .hero-stage {
+    padding: 88px 12px 32px;
+    gap: 18px;
+  }
+  .hero-title .line { font-size: 36px; }
+  .hero-portrait { width: 84%; max-width: 260px; }
+  .hero-register { width: 184px; height: 48px; font-size: 14px; }
+  .hero-tagline { font-size: 11px; letter-spacing: 0.16em; }
+}
+
+@media (max-width: 340px) {
+  .hero-title .line { font-size: 30px; }
+  .hero-portrait { width: 90%; }
+}
+
+/* Touch-only: replace hover lift with active feedback */
+@media (hover: none) {
+  .hero-register:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  .hero-register:active {
+    transform: translateY(-1px);
+    background: linear-gradient(90deg, rgba(124, 58, 237, 1) 0%, rgba(255, 255, 255, 0.4) 100%);
+  }
+}

@@ -1,0 +1,144 @@
+:root {
+  --brand: #7c3aed; /* Core purple */
+  --bg-dark: #09090b; /* Deep black background */
+}
+
+.who {
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  text-align: center;
+  background: var(--bg-dark);
+  overflow: hidden;
+  color: #ffffff;
+  font-family: 'Manrope', sans-serif;
+}
+
+/* ============================
+   AMBIENT BACKGROUND GLOWS
+   ============================ */
+.who-glow {
+  position: absolute;
+  top: 50%;
+  width: 500px;
+  height: 500px;
+  background: var(--brand);
+  filter: blur(140px);
+  border-radius: 50%;
+  opacity: 0.15; /* Subtle ambient light */
+  pointer-events: none;
+  z-index: 0;
+  transform: translateY(-50%);
+}
+
+.glow-left {
+  left: -150px;
+}
+
+.glow-right {
+  right: -150px;
+}
+
+/* ============================
+   TYPOGRAPHY
+   ============================ */
+.eyebrow {
+  position: relative;
+  z-index: 1;
+  color: var(--brand);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin: 0 0 40px 0;
+  text-transform: uppercase;
+}
+
+.who-note {
+  position: relative;
+  z-index: 1;
+  margin-top: 40px;
+  font-size: 16px;
+  color: #cbd5e1; /* Light grayish-white */
+}
+
+/* ============================
+   CARDS GRID
+   ============================ */
+.who-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1100px; /* Controls how wide the blocks stretch */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.who-card {
+  position: relative;
+  /* Frosted glass background */
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  
+  /* Centering the text perfectly */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  min-height: 180px; 
+  
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.who-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(124, 58, 237, 0.4);
+}
+
+.who-text {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.who-text p {
+  margin: 0;
+  color: #f8fafc;
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+@media (max-width: 1024px) {
+  .who-grid {
+    gap: 20px;
+    padding: 0 24px;
+  }
+  .who-card {
+    padding: 40px 16px;
+    min-height: 160px;
+  }
+}
+
+@media (max-width: 720px) {
+  .who-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+  .who-card {
+    min-height: 120px;
+    padding: 26px 20px;
+  }
+  .who-text { font-size: 16px; }
+  .who-note { font-size: 14px; padding: 0 20px; }
+}
+
+@media (hover: none) {
+  .who-card:hover { transform: none; }
+}
